@@ -95,14 +95,13 @@ header {
 
 	.logo {
 		background-image: url("../images/header-bg.png");
-		background-position: 50% 100%;
+		background-position: 45% 100%;
 		background-repeat: no-repeat;
 		min-height: 383px;
 		background-size: cover;
 
 		@media screen and (max-width: 1023px) {
 			min-height: 200px;
-			background-position: 45% 100%;
 		}
 
 		a {

@@ -65,14 +65,13 @@ header {
       color: #fcd2ea; }
   header .logo {
     background-image: url("../images/header-bg.png");
-    background-position: 50% 100%;
+    background-position: 45% 100%;
     background-repeat: no-repeat;
     min-height: 383px;
     background-size: cover; }
     @media screen and (max-width: 1023px) {
       header .logo {
-        min-height: 200px;
-        background-position: 45% 100%; } }
+        min-height: 200px; } }
     header .logo a {
       display: block;
       max-width: 387px;
