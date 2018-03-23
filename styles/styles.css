@@ -17,10 +17,10 @@ nav ul {
   margin: 0;
   padding: 0; }
 
-@media screen and (max-width: 1023px) {
+@media screen and (min-width: 1024px) {
   header nav,
   footer nav {
-    max-width: 900px;
+    max-width: 940px;
     margin-left: auto;
     margin-right: auto; } }
 
@@ -91,12 +91,12 @@ header {
       padding: 18px 0; }
 
 main {
-  padding: 37px 40px; }
+  padding: 37px 40px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto; }
   @media screen and (max-width: 1023px) {
     main {
-      max-width: 980px;
-      margin-left: auto;
-      margin-right: auto;
       padding: 18px 20px 20px; } }
   main .intro {
     min-height: 204px;
@@ -111,8 +111,7 @@ main {
     margin-bottom: 40px; }
     @media screen and (max-width: 1023px) {
       main .intro {
-        padding-left: 27px;
-        padding-right: 27px;
+        padding-left: 0;
         margin-bottom: 20px;
         background: none; }
         main .intro p:first-child {
@@ -122,21 +121,19 @@ main {
           background-size: 102px auto;
           background-repeat: no-repeat;
           min-height: 102px; } }
-  @media screen and (max-width: 1023px) {
-    main .insta {
-      padding-left: 20px;
-      padding-right: 20px; } }
   main .insta ul {
     list-style: none;
     margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 40px; }
-    @media screen and (max-width: 1023px) {
+    padding: 0; }
+    @supports (display: grid) {
       main .insta ul {
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 20px; } }
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 40px; }
+        @media screen and (max-width: 1023px) {
+          main .insta ul {
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px; } } }
   main .insta a, main .insta img {
     display: block; }
   main .insta img {

@@ -35,9 +35,8 @@ nav {
 header,
 footer {
 	nav {
-
-		@media screen and (max-width: 1023px) {
-			max-width: $grid-max-width;
+		@media screen and (min-width: 1024px) {
+			max-width: $grid-max-width + $grid-gap;
 			margin-left: auto;
 			margin-right: auto;
 		}
@@ -135,13 +134,13 @@ header {
 
 main {
 	@media screen and (max-width: 1023px) {
-		max-width: $grid-max-width + $grid-gap*2;
-		margin-left: auto;
-		margin-right: auto;
 		padding: 18px ($grid-gap/2) ($grid-gap/2);
 	}
 
 	padding: 37px $grid-gap;
+	max-width: $grid-max-width;
+	margin-left: auto;
+	margin-right: auto;
 
 	.intro {
 		min-height: 204px;
@@ -156,8 +155,7 @@ main {
 		margin-bottom: $grid-gap;
 
 		@media screen and (max-width: 1023px) {
-			padding-left: 27px;
-			padding-right: 27px;
+			padding-left: 0;
 			margin-bottom: ($grid-gap/2);
 			background: none;
 
@@ -173,22 +171,21 @@ main {
 	}
 
 	.insta {
-		@media screen and (max-width: 1023px) {
-			padding-left: ($grid-gap/2);
-			padding-right: ($grid-gap/2);
-		}
-
 		ul {
 			list-style: none;
 			margin: 0;
 			padding: 0;
-			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
-			grid-gap: $grid-gap;
 
-			@media screen and (max-width: 1023px) {
-				grid-template-columns: 1fr 1fr;
-				grid-gap: ($grid-gap/2);
+			@supports (display: grid) {
+				display: grid;
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-gap: $grid-gap;
+
+
+				@media screen and (max-width: 1023px) {
+					grid-template-columns: 1fr 1fr;
+					grid-gap: ($grid-gap/2);
+				}
 			}
 		}
 
