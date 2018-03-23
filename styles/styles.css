@@ -1,0 +1,156 @@
+html {
+  background-color: #fcd2ea; }
+
+body {
+  background-color: white;
+  color: #393c41;
+  font-family: Gotham, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5; }
+  @media screen and (max-width: 1023px) {
+    body {
+      font-size: 14px;
+      line-height: 1.3; } }
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+@media screen and (max-width: 1023px) {
+  header nav,
+  footer nav {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto; } }
+
+header nav ul,
+footer nav ul {
+  display: flex; }
+
+header nav li a,
+footer nav li a {
+  padding: 18px 20px;
+  display: block; }
+
+header nav a,
+footer nav a {
+  text-decoration: none; }
+  header nav a:hover,
+  footer nav a:hover {
+    text-decoration: underline; }
+
+header {
+  background-color: #393c41;
+  padding-bottom: 20px;
+  position: relative; }
+  header:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20px;
+    background-color: #d3bd88;
+    background-image: url("../images/header-bar.png");
+    background-position: 50% 0;
+    background-repeat: repeat-x; }
+  header nav {
+    background-color: #393c41;
+    font-size: 16px;
+    line-height: 1.5;
+    display: flex;
+    justify-content: space-between; }
+    header nav a {
+      color: #fcd2ea; }
+  header .logo {
+    background-image: url("../images/header-bg.png");
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    min-height: 383px;
+    background-size: cover; }
+    @media screen and (max-width: 1023px) {
+      header .logo {
+        min-height: 200px;
+        background-position: 45% 100%; } }
+    header .logo a {
+      display: block;
+      max-width: 387px;
+      margin-left: auto;
+      margin-right: auto;
+      transform: translateY(50%); }
+      @media screen and (max-width: 1023px) {
+        header .logo a {
+          max-width: 200px; } }
+    header .logo img {
+      max-width: 100%; }
+  header .account {
+    color: #fcd2ea;
+    padding: 0 20px; }
+    header .account a {
+      display: inline-block;
+      padding: 18px 0; }
+
+main {
+  padding: 37px 40px; }
+  @media screen and (max-width: 1023px) {
+    main {
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 18px 20px 20px; } }
+  main .intro {
+    min-height: 204px;
+    background-image: url("../images/logo-instagram.svg");
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    background-size: 204px auto;
+    padding-left: 248px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 40px; }
+    @media screen and (max-width: 1023px) {
+      main .intro {
+        padding-left: 27px;
+        padding-right: 27px;
+        margin-bottom: 20px;
+        background: none; }
+        main .intro p:first-child {
+          padding-left: 118px;
+          background-image: url("../images/logo-instagram.svg");
+          background-position: 0 50%;
+          background-size: 102px auto;
+          background-repeat: no-repeat;
+          min-height: 102px; } }
+  @media screen and (max-width: 1023px) {
+    main .insta {
+      padding-left: 20px;
+      padding-right: 20px; } }
+  main .insta ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px; }
+    @media screen and (max-width: 1023px) {
+      main .insta ul {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px; } }
+  main .insta a, main .insta img {
+    display: block; }
+  main .insta img {
+    max-width: 100%;
+    width: 100%;
+    height: auto; }
+
+footer {
+  background-color: #fcd2ea; }
+  footer nav {
+    display: flex;
+    justify-content: space-between; }
+    footer nav a {
+      color: #393c41; }
+  footer .yandex {
+    padding: 18px 20px; }
