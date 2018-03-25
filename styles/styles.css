@@ -6,11 +6,19 @@ body {
   color: #393c41;
   font-family: Gotham, Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.5; }
+  line-height: 1.5;
+  overflow-x: hidden; }
   @media screen and (max-width: 1023px) {
     body {
       font-size: 14px;
       line-height: 1.3; } }
+
+a,
+button {
+  outline: none; }
+  a:focus,
+  button:focus {
+    outline: none; }
 
 nav ul {
   list-style: none;
@@ -22,11 +30,10 @@ nav ul {
   footer nav {
     max-width: 940px;
     margin-left: auto;
-    margin-right: auto; } }
-
-header nav ul,
-footer nav ul {
-  display: flex; }
+    margin-right: auto; }
+    header nav ul,
+    footer nav ul {
+      display: flex; } }
 
 header nav li a,
 footer nav li a {
@@ -56,11 +63,32 @@ header {
     background-position: 50% 0;
     background-repeat: repeat-x; }
   header nav {
-    background-color: #393c41;
-    font-size: 16px;
-    line-height: 1.5;
-    display: flex;
-    justify-content: space-between; }
+    background-color: #393c41; }
+    @media screen and (max-width: 1023px) {
+      header nav ul {
+        background-color: white;
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.66);
+        position: absolute;
+        width: 100%;
+        max-width: 480px;
+        z-index: 10;
+        display: none; }
+        header nav ul li + li {
+          border-top: 1px solid rgba(0, 0, 0, 0.13); }
+        header nav ul a {
+          color: #393c41; }
+      header nav .menu-toggle {
+        margin-left: 5px; }
+      header nav .account {
+        float: right; }
+        header nav .account a {
+          padding: 13px 0; } }
+    @media screen and (min-width: 1024px) {
+      header nav {
+        display: flex;
+        justify-content: space-between; }
+        header nav .menu-toggle {
+          display: none; } }
     header nav a {
       color: #fcd2ea; }
   header .logo {
@@ -89,6 +117,27 @@ header {
     header .account a {
       display: inline-block;
       padding: 18px 0; }
+
+.menu-toggle {
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  padding: 0;
+  border: 0 none;
+  display: inline-block;
+  background-image: url("../images/icon-menu.svg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  text-indent: 200%;
+  white-space: nowrap; }
+  .mobile-nav--open .menu-toggle {
+    background-image: url("../images/icon-close.svg"); }
+    @media screen and (max-width: 1023px) {
+      .mobile-nav--open .menu-toggle + .menu {
+        display: block; } }
+  .menu-toggle:hover, .menu-toggle:focus {
+    background-color: rgba(255, 255, 255, 0.15); }
 
 main {
   padding: 37px 40px;
@@ -120,16 +169,30 @@ main {
           background-position: 0 50%;
           background-size: 102px auto;
           background-repeat: no-repeat;
-          min-height: 102px; } }
+          min-height: 102px;
+          display: flex;
+          align-items: center; } }
   main .insta ul {
     list-style: none;
     margin: 0;
-    padding: 0; }
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    main .insta ul li {
+      flex-basis: 32%;
+      padding-bottom: 2%; }
+      @media screen and (max-width: 1023px) {
+        main .insta ul li {
+          flex-basis: 48%;
+          padding-bottom: 4%; } }
     @supports (display: grid) {
       main .insta ul {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 40px; }
+        main .insta ul li {
+          padding-bottom: 0; }
         @media screen and (max-width: 1023px) {
           main .insta ul {
             grid-template-columns: 1fr 1fr;
@@ -143,10 +206,18 @@ main {
 
 footer {
   background-color: #fcd2ea; }
-  footer nav {
-    display: flex;
-    justify-content: space-between; }
-    footer nav a {
-      color: #393c41; }
+  @media screen and (max-width: 1023px) {
+    footer nav {
+      text-align: center; }
+      footer nav ul li {
+        display: inline-block; }
+      footer nav .yandex {
+        display: inline-block; } }
+  @media screen and (min-width: 1024px) {
+    footer nav {
+      display: flex;
+      justify-content: space-between; } }
+  footer nav a {
+    color: #393c41; }
   footer .yandex {
     padding: 18px 20px; }

@@ -17,10 +17,20 @@ body {
 	font-family: Gotham, Arial, sans-serif;
 	font-size: 16px;
 	line-height: 1.5;
+	overflow-x: hidden;
 
 	@media screen and (max-width: 1023px) {
 		font-size: 14px;
 		line-height: 1.3;
+	}
+}
+
+a,
+button {
+	outline: none;
+
+	&:focus {
+		outline: none;
 	}
 }
 
@@ -39,10 +49,10 @@ footer {
 			max-width: $grid-max-width + $grid-gap;
 			margin-left: auto;
 			margin-right: auto;
-		}
 
-		ul {
-			display: flex;
+			ul {
+				display: flex;
+			}
 		}
 
 		li {
@@ -82,10 +92,47 @@ header {
 
 	nav {
 		background-color: $grey;
-		font-size: 16px;
-		line-height: 1.5;
-		display: flex;
-		justify-content: space-between;
+
+		@media screen and (max-width: 1023px) {
+			ul {
+				background-color: white;
+				box-shadow: 0 25px 45px rgba(black,0.66);
+				position: absolute;
+				width: 100%;
+				max-width: 480px;
+				z-index: 10;
+				display: none;
+
+				li + li {
+					border-top: 1px solid rgba(black,0.13);
+				}
+
+				a {
+					color: $grey;
+				}
+			}
+
+			.menu-toggle {
+				margin-left: 5px;
+			}
+
+			.account {
+				float: right;
+
+				a {
+					padding: 13px 0;
+				}
+			}
+		}
+
+		@media screen and (min-width: 1024px) {
+			display: flex;
+			justify-content: space-between;
+
+			.menu-toggle {
+				display: none;
+			}
+		}
 
 		a {
 			color: $pink;
@@ -132,6 +179,36 @@ header {
 	}
 }
 
+.menu-toggle {
+	width: 45px;
+	height: 45px;
+	background-color: transparent;
+	padding: 0;
+	border: 0 none;
+	display: inline-block;
+	background-image: url("../images/icon-menu.svg");
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	overflow: hidden;
+	text-indent: 200%;
+	white-space: nowrap;
+
+	.mobile-nav--open & {
+		background-image: url("../images/icon-close.svg");
+
+		+ .menu {
+			@media screen and (max-width: 1023px) {
+				display: block;
+			}
+		}
+	}
+
+	&:hover,
+	&:focus {
+		background-color: rgba(white,0.15);
+	}
+}
+
 main {
 	@media screen and (max-width: 1023px) {
 		padding: 18px ($grid-gap/2) ($grid-gap/2);
@@ -166,6 +243,8 @@ main {
 				background-size: 102px auto;
 				background-repeat: no-repeat;
 				min-height: 102px;
+				display: flex;
+				align-items: center;
 			}
 		}
 	}
@@ -175,11 +254,28 @@ main {
 			list-style: none;
 			margin: 0;
 			padding: 0;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+
+			li {
+				flex-basis: 32%;
+				padding-bottom: 2%;
+
+				@media screen and (max-width: 1023px) {
+					flex-basis: 48%;
+					padding-bottom: 4%;
+				}
+			}
 
 			@supports (display: grid) {
 				display: grid;
 				grid-template-columns: 1fr 1fr 1fr;
 				grid-gap: $grid-gap;
+
+				li {
+					padding-bottom: 0;
+				}
 
 
 				@media screen and (max-width: 1023px) {
@@ -205,8 +301,24 @@ footer {
 	background-color: $pink;
 
 	nav {
-		display: flex;
-		justify-content: space-between;
+		@media screen and (max-width: 1023px) {
+			text-align: center;
+
+			ul {
+				li {
+					display: inline-block;
+				}
+			}
+
+			.yandex {
+				display: inline-block;
+			}
+		}
+
+		@media screen and (min-width: 1024px) {
+			display: flex;
+			justify-content: space-between;
+		}
 
 		a {
 			color: $grey;
