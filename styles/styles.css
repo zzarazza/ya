@@ -178,25 +178,55 @@ main {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; }
+    justify-content: space-between;
+    overflow: hidden; }
+    @media screen and (max-width: 1023px) {
+      main .insta ul {
+        flex-direction: column;
+        align-content: space-between; } }
+    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+      main .insta ul {
+        max-height: 700px; } }
+    @media screen and (min-device-width: 414px) and (max-device-width: 736px) {
+      main .insta ul {
+        max-height: 800px; } }
+    @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (orientation: landscape) {
+      main .insta ul {
+        max-height: 1300px; } }
+    @media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (orientation: landscape) {
+      main .insta ul {
+        max-height: 1500px; } }
+    @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+      main .insta ul {
+        max-height: 1600px; } }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+      main .insta ul {
+        max-height: 1500px; } }
     main .insta ul li {
       flex-basis: 32%;
       padding-bottom: 2%; }
       @media screen and (max-width: 1023px) {
         main .insta ul li {
-          flex-basis: 48%;
-          padding-bottom: 4%; } }
+          flex-basis: auto;
+          padding-bottom: 4%;
+          width: 48%; } }
     @supports (display: grid) {
       main .insta ul {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 40px; }
+        grid-gap: 40px;
+        max-height: none !important;
+        justify-content: initial; }
         main .insta ul li {
-          padding-bottom: 0; }
+          padding-bottom: 0;
+          flex-basis: initial;
+          width: auto; }
         @media screen and (max-width: 1023px) {
           main .insta ul {
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 20px; } } }
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: auto;
+            grid-gap: 20px;
+            grid-auto-flow: column; } } }
   main .insta a, main .insta img {
     display: block; }
   main .insta img {
