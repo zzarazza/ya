@@ -366,3 +366,78 @@ footer {
 		padding: 18px ($grid-gap/2);
 	}
 }
+
+form {
+	max-width: 480px;
+	margin: 30px auto;
+
+	h1 {
+		color: $pink;
+		font-weight: 400;
+	}
+
+	label {
+		display: block;
+		font-size: 10px;
+		text-transform: uppercase;
+		margin-bottom: 2px;
+	}
+
+	input {
+		font-size: 16px;
+		line-height: 1.5;
+		box-sizing: border-box;
+	}
+
+	.form-el {
+		margin-bottom: 1.5rem;
+
+		input {
+			display: block;
+			width: 100%;
+			padding: 0.5em 1em;
+			background-color: white;
+			color: $grey;
+			border: 2px solid $pink;
+
+			&::placeholder {
+				color: rgba($grey,0.35);
+			}
+		}
+	}
+
+	.form-control {
+		input {
+			display: inline-block;
+			padding: 0.5em 2em;
+			background-color: white;
+			border: 2px solid $grey;
+			border-radius: 2px;
+			transition: all 0.2s ease-in;
+			cursor: pointer;
+
+			&:hover {
+				background-color: $grey;
+				color: $pink;
+			}
+		}
+	}
+
+	.message {
+		padding: 1em 1.5em;
+		margin-bottom: 1.5em;
+		display: none;
+
+		&.error {
+			background-color: $pink;
+		}
+
+		p:first-child {
+			margin-top: 0;
+		}
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

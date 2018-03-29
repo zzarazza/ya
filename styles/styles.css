@@ -251,3 +251,51 @@ footer {
     color: #393c41; }
   footer .yandex {
     padding: 18px 20px; }
+
+form {
+  max-width: 480px;
+  margin: 30px auto; }
+  form h1 {
+    color: #fcd2ea;
+    font-weight: 400; }
+  form label {
+    display: block;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-bottom: 2px; }
+  form input {
+    font-size: 16px;
+    line-height: 1.5;
+    box-sizing: border-box; }
+  form .form-el {
+    margin-bottom: 1.5rem; }
+    form .form-el input {
+      display: block;
+      width: 100%;
+      padding: 0.5em 1em;
+      background-color: white;
+      color: #393c41;
+      border: 2px solid #fcd2ea; }
+      form .form-el input::placeholder {
+        color: rgba(57, 60, 65, 0.35); }
+  form .form-control input {
+    display: inline-block;
+    padding: 0.5em 2em;
+    background-color: white;
+    border: 2px solid #393c41;
+    border-radius: 2px;
+    transition: all 0.2s ease-in;
+    cursor: pointer; }
+    form .form-control input:hover {
+      background-color: #393c41;
+      color: #fcd2ea; }
+  form .message {
+    padding: 1em 1.5em;
+    margin-bottom: 1.5em;
+    display: none; }
+    form .message.error {
+      background-color: #fcd2ea; }
+    form .message p:first-child {
+      margin-top: 0; }
+    form .message p:last-child {
+      margin-bottom: 0; }
